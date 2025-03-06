@@ -1,4 +1,4 @@
-##Steps for using the package.
+## Steps for using the package.
 
   ###  step 1 - Build the package in your workspace:
         cd workspace
