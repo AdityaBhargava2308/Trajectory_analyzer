@@ -1,11 +1,11 @@
 ## Steps for using the package.
 
-  ###  step 1 - Build the package in your workspace:
+  ### step 1 - Build the package in your workspace:
         cd workspace
         colcon build --packages-select trajectory_analyzer --symlink-install
         source install/setup.bash
 
-    ### step 2 - Publish and save the trajectory during robot's navigation/mapping/path_planning.
+  ### step 2 - Publish and save the trajectory during robot's navigation/mapping/path_planning.
         Terminal 1 - launch the gazebo world/bringup file for the robot (following is the example for turtlebot):
             ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
         
@@ -18,7 +18,7 @@
         Terminal 4 - call the service with file name and time duration as parameters to save the trajectory as a csv file in the csv folder of the package:
             ros2 service call /save_trajectory trajectory_analyzer/srv/SaveTrajectory "{filename: 'trajectory1.csv', duration: 20.0}"
 
-   ###  step 3 - Read the saved trajectory and visualise it on rviz wrt odom frame (give the trajectory file name as parameter to view that particular trajectory):
+   ### step 3 - Read the saved trajectory and visualise it on rviz wrt odom frame (give the trajectory file name as parameter to view that particular trajectory):
             ros2 launch trajectory_analyzer TrajectoryViewer.launch.py trajectory_file:=trajectory1.csv
 
 
